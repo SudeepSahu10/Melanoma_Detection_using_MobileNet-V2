@@ -1,0 +1,47 @@
+{% extends "base.html" %} {% block content %}
+
+
+<center>
+<h2>Image Classifier</h2>
+<br>
+
+<div>
+    <form id="upload-file" method="post" enctype="multipart/form-data">
+        <label for="imageUpload" class="upload-label">
+            Choose...
+        </label>
+        <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
+    </form>
+
+    <div class="image-section" style="display:none;">
+        <div class="img-preview">
+            <div id="imagePreview">
+            </div>
+        </div>
+        <div>
+            <button type="button" class="btn btn-primary btn-lg " id="btn-predict">Predict!</button>    
+        </div>
+        <br>
+    </div>
+
+    <div class="loader" style="display:none;"></div>
+
+    <h3 id="result">
+        <span> </span>
+    </h3>
+
+    <!-- <div class="btn-group" class="image-section">
+        <button type="button" class="btn btn-primary dropdown-toggle btn-lg" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            See Remedies!
+        </button>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="blackrotrem">Apple Black Rot</a>
+            <a class="dropdown-item" href="cedarrust">Apple Cedar Rust</a>
+            <a class="dropdown-item" href="scab">Apple Scab</a>
+        </div>
+    </div> -->
+
+</div>
+</center>
+{% endblock %}

@@ -1,0 +1,100 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Leaf Disease Detector</title>
+    <link
+      href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link
+      href="{{ url_for('static', filename='css/main.css') }}"
+      rel="stylesheet"
+    />
+  </head>
+
+  <style>
+    body {
+      background-image: linear-gradient(rgb(0, 170, 170), rgb(9, 87, 87));
+    }
+    h2 {
+      color: white;
+    }
+
+    h3#result {
+      color: #fff;
+    }
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    /* set the size and position of button on web */
+    .button {
+      padding: 10px 30px;
+      font-size: 15px;
+    }
+    /* provide css to background of list items */
+    #list-items {
+      display: none;
+      position: absolute;
+      min-width: 134px;
+    }
+    /* provide css to list items */
+    #list-items a {
+      display: block;
+      font-size: 17px;
+      background-color: #343a40;
+      color: white;
+      text-decoration: none;
+      padding: 10px;
+    }
+  </style>
+
+  <script>
+    //show and hide dropdown list item on button click
+    function show_hide() {
+      var click = document.getElementById("list-items");
+      if (click.style.display === "none") {
+        click.style.display = "block";
+      } else {
+        click.style.display = "none";
+      }
+    }
+  </script>
+
+  <body>
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">Apple Leaf Disease Detection</a>
+        <div class="dropdown">
+          <button onclick="show_hide()" class="button">Contact us</button>
+          <center>
+            <!-- dropdown list items will show when we click the drop button -->
+            <div id="list-items">
+              <a href="mailto:rahul.sd@somaiya.edu"> rahul.sd@somaiya.edu </a>
+              <a href="mailto:smit10@somaiya.edu"> smit10@somaiya.edu </a>
+              <a href="mailto:vipul.m@somaiya.edu"> vipul.m@somaiya.edu </a>
+            </div>
+          </center>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div id="content" style="margin-top: 2em">
+        {% block content %}{% endblock %}
+      </div>
+    </div>
+  </body>
+
+  <footer>
+    <script
+      src="{{ url_for('static', filename='js/main.js') }}"
+      type="text/javascript"
+    ></script>
+  </footer>
+</html>
